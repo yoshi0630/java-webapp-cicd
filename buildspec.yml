@@ -6,7 +6,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username $AWS --password-stdin $ECR_REGISTRY
       - mvn clean package
   build:
     commands:
